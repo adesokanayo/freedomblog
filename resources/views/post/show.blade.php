@@ -14,7 +14,7 @@
          
                 <!-- Author -->
                 <p class="lead">
-                    by <a href="#">Start Bootstrap within my Laravel</a>
+                    by <a href="#">Start Bootstrap within my personal Laravel</a>
                 </p>
 
                 
@@ -37,34 +37,35 @@
              
   
   <h3>Post Comment</h3> 
+    <div class="comments list-group-item">
+    
   @foreach($post->comments as $comment)
 
-  <div class="comments list-group-item">
-  <ul>
-
+ 
  <strong>
 
 {{$comment->created_at->diffForHumans()}}:
  </strong>
-
-  
-  {{ $comment->body }}
-
-   @endforeach
  
+  {{ $comment->body }}
+  <br><br>
 
-    </ul>
+  <hr>
+     @endforeach
+       </ul>
+
   </div> 
 
 
-<hr>
+<br>
   <div class= "cards">
 
   <div class= "card-block">
   
   <div class= "form-group">
   
-  <form method="POST" action="/">
+  
+  <form method="POST" action="/posts/{{$post->id}}/comments">
   {{csrf_field()}} 
  <textarea name="body" Placeholder="Enter comment here" class="form-control"></textarea><br>
  <button type="submit" class="btn btn-primary">Add Comment</button>

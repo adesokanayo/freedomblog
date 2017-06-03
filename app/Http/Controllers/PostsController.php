@@ -7,7 +7,7 @@ use App\Post;
 
 class PostsController extends Controller
 {
-    //
+    
 
     public function index(){
 
@@ -26,7 +26,7 @@ class PostsController extends Controller
     public function create(){
 
         return view ('post.create');
-       //return ('hello all');
+      
     }
 
     public function store(Request $request){
@@ -60,16 +60,6 @@ class PostsController extends Controller
     public function latest(){
 
        return  $this->orderBy($column,'desc');
-    }
-
-
-
-    public function addcomment(){
-
-
-
-
-        
     }
 
 }
