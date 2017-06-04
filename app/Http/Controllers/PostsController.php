@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\User;
 
 class PostsController extends Controller
 {
@@ -45,14 +46,26 @@ $this->middleware('auth')->except(['index','show']);
 
 
        $post = new Post;
+       $user = new User;
 
       // $post->title = request('title');
       // $post->body =  request('body');
 
       // $post->save();
-      $user_id =auth()->user()->id;
+   
 
-       $post::create(request(['title','body','user_id']));
+       $post::create([
+           
+           
+           'title' => request('title'),
+           'body'=> request('body'),
+           'user_id' => auth()->id()
+           //request(['title','body']),
+       
+       
+        // 'user_id'=> Auth()->user()->id
+       
+       ]);
 
        return redirect('/');
      }

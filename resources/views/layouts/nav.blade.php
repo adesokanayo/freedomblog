@@ -27,7 +27,7 @@
                 <div>><ul><li>
                      <!--<a href="#">You</a>-->
                      @if (Auth::check());
-                        <a href="#" class=" navbar-nav navbar-right">{{Auth::user()->name}}</a>
+                        <a href="#" class=" navbar-nav navbar-right">{{Auth::user()->name}}|{{Auth::user()->id}}</a>
                     </li>  </ul> </div>
                     @endif
             </div>
