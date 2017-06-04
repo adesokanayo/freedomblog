@@ -10,11 +10,11 @@ use App\Comment;
 class CommentsController extends Controller
 {
     
-    public function store(Request $request, $post_id){
+    public function store(Request $request , $post_id){
 
 
+$this->validate(request(),['body'=>'required|min:2']);
    $comment = New Comment;
-
 
 
 
@@ -25,8 +25,7 @@ class CommentsController extends Controller
 
        return back();
 
+    
     }
-
-
 
 }

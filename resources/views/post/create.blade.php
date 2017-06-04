@@ -24,15 +24,17 @@
     <div class ="form-group">
 
     <label for="body">Body:</label>
-    <textarea id="body"name="body" class="form-control"></textarea>
+    <textarea id="body"name ="body" class="form-control"></textarea>
    
    </div>
 
     <button type ="submit" value="Publish" class ="btn btn-default">Publish</button>
+    @include('layouts.errors')
     </div>
+    
 </form>
 
-@include('layouts.errors')
+
 
 </div>
 @endsection

@@ -67,12 +67,14 @@
   
   <form method="POST" action="/posts/{{$post->id}}/comments">
   {{csrf_field()}} 
- <textarea name="body" Placeholder="Enter comment here" class="form-control"></textarea><br>
+ <textarea name="body" Placeholder="Enter comment here" class="form-control" required></textarea><br>
  <button type="submit" class="btn btn-primary">Add Comment</button>
   </form>
   </div>
+  <div> @include('layouts.errors')</div> 
   </div>
   </div>
-
 </div>
+ 
 @endsection
+

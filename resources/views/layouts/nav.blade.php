@@ -22,8 +22,14 @@
                     </li>
                     <li>
                         <a href="#">Connect</a>
-                    </li>
+                    </li>    
                 </ul>
+                <div>><ul><li>
+                     <!--<a href="#">You</a>-->
+                     @if (Auth::check());
+                        <a href="#" class=" navbar-nav navbar-right">{{Auth::user()->name}}</a>
+                    </li>  </ul> </div>
+                    @endif
             </div>
             <!-- /.navbar-collapse -->
         </div>
