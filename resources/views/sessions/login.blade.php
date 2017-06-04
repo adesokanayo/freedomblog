@@ -26,7 +26,7 @@
    </div>
 
       
-    <button type="submit" value="submit" class ="btn btn-primary">Register</button>
+    <button type="submit" value="submit" class ="btn btn-primary">Login</button>
     @include('layouts.errors')
     </div>
     

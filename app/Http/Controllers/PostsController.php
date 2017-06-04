@@ -10,13 +10,9 @@ class PostsController extends Controller
 
 public function __construct(){
 
-$this->middleware('auth');
+$this->middleware('auth')->except(['index','show']);
 
 }
-
-
-
-    
 
     public function index(){
 
@@ -54,8 +50,9 @@ $this->middleware('auth');
       // $post->body =  request('body');
 
       // $post->save();
+      $user_id =auth()->user()->id;
 
-       $post::create(request(['title','body']));
+       $post::create(request(['title','body','user_id']));
 
        return redirect('/');
      }
